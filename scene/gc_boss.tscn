@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxnhc8hpywdx3"]
+
+[ext_resource type="Script" uid="uid://bmsydithyvfu8" path="res://script/gc_boss.gd" id="1_00ipw"]
+[ext_resource type="Texture2D" uid="uid://b7qhl0kf5q1vr" path="res://asset/WhatsApp_Image_2026-06-11_at_09.04.58__1_-removebg-preview.png" id="2_wpm33"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ha3rq"]
+radius = 17.991179
+height = 99.56623
+
+[node name="gc_boss" type="Node2D"]
+scale = Vector2(7, 7)
+script = ExtResource("1_00ipw")
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_wpm33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(0, 5)
+rotation = -1.5625819
+shape = SubResource("CapsuleShape2D_ha3rq")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtnfa8047agse"]
+
+[ext_resource type="Script" uid="uid://ci0lquj3k1f2m" path="res://script/canvas_layer.gd" id="1_xp8f4"]
+
+[sub_resource type="Theme" id="Theme_0wxc3"]
+
+[node name="Win_ui" type="CanvasLayer"]
+script = ExtResource("1_xp8f4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0wxc3")
+color = Color(0.94744223, 0.71080464, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 64.0
+offset_right = 729.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 70
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 160.0
+offset_right = 734.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 32
+text = "Want to play again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 180.0
+offset_top = 425.0
+offset_right = 432.0
+offset_bottom = 488.0
+theme_override_colors/font_hover_color = Color(6.160736e-06, 0.79900837, 0.25225896, 1)
+theme_override_font_sizes/font_size = 32
+text = "Restart
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 776.0
+offset_top = 425.0
+offset_right = 1028.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0.8673716, 0.86974937, 0.9249729, 1)
+theme_override_colors/font_pressed_color = Color(0.7723388, 0, 0.15594886, 1)
+theme_override_colors/font_hover_color = Color(0.8741635, 0, 0.24685335, 1)
+theme_override_font_sizes/font_size = 32
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

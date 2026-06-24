@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mwvt2strspqk"]
+
+[ext_resource type="Script" uid="uid://bs13vjw4pygg2" path="res://script/wind_script.gd" id="1_vuf0e"]
+
+[node name="WindManager" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_vuf0e")
+player = NodePath("")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://c830wqllqrqre"]
+
+[ext_resource type="Script" uid="uid://bb51ysjg7b47t" path="res://script/defeat_screen.gd" id="1_7f5ei"]
+
+[node name="Defeat_Screen" type="CanvasLayer"]
+script = ExtResource("1_7f5ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -173.0
+offset_right = 235.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02631408, 0.17907387, 0.18690443, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -156.0
+offset_right = 240.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.035
+offset_left = 457.0
+offset_top = 215.0
+offset_right = 675.416
+offset_bottom = 256.32
+theme_override_font_sizes/font_size = 32
+text = "Kamu Terjatuh!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_again" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 298.0
+offset_right = 659.0
+offset_bottom = 344.0
+text = "Play Again
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 359.0
+offset_right = 656.0
+offset_bottom = 405.0
+text = "Quit
+"
+
+[connection signal="pressed" from="Play_again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

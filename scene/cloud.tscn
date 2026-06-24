@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgfkxn1iou6j7"]
+
+[ext_resource type="Script" uid="uid://bvnwovk7jk5vj" path="res://script/cloud.gd" id="1_720ap"]
+[ext_resource type="Texture2D" uid="uid://b7qhl0kf5q1vr" path="res://asset/WhatsApp_Image_2026-06-11_at_09.04.58__1_-removebg-preview.png" id="2_720ap"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02t6m"]
+radius = 32.987236
+height = 178.0
+
+[node name="Cloud" type="AnimatableBody2D"]
+script = ExtResource("1_720ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_720ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.3841858e-07, 25.000004)
+rotation = -1.5726131
+shape = SubResource("CapsuleShape2D_02t6m")

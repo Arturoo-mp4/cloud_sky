@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bi54gtdg0gj1y"]
+
+[ext_resource type="Script" uid="uid://bx1w8mp75d7ax" path="res://script/portal.gd" id="1_cfsmh"]
+[ext_resource type="Texture2D" uid="uid://da1bclqxay0xp" path="res://asset/png-transparent-portal-video-game-film-column-sprite-game-video-game-news-removebg-preview.png" id="1_pno75"]
+[ext_resource type="Texture2D" uid="uid://b7qhl0kf5q1vr" path="res://asset/WhatsApp_Image_2026-06-11_at_09.04.58__1_-removebg-preview.png" id="2_cfsmh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtg32"]
+atlas = ExtResource("1_pno75")
+region = Rect2(0, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5eg8"]
+atlas = ExtResource("1_pno75")
+region = Rect2(162, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3hp6"]
+atlas = ExtResource("1_pno75")
+region = Rect2(324, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6xy5"]
+atlas = ExtResource("1_pno75")
+region = Rect2(486, 0, 162, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gwi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtg32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5eg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3hp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6xy5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2cbhj"]
+radius = 82.0
+height = 298.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d314w"]
+size = Vector2(3234, 922)
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_cfsmh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_3gwi4")
+autoplay = "default"
+frame_progress = 0.70427865
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -27)
+shape = SubResource("CapsuleShape2D_2cbhj")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(-9, 240)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+texture_filter = 1
+position = Vector2(-269.99997, 368.99997)
+scale = Vector2(62.923077, 44.977272)
+texture = ExtResource("2_cfsmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-271, 375)
+shape = SubResource("RectangleShape2D_d314w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
