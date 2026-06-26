@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cqjr3g4y4jga0"]
+[gd_scene load_steps=23 format=4 uid="uid://cqjr3g4y4jga0"]
 
 [ext_resource type="Texture2D" uid="uid://mwwfm1xmfnlh" path="res://asset/Tilemap/Texture/TX Tileset Ground.png" id="1_e7v6y"]
 [ext_resource type="Script" uid="uid://x8bae531nxk3" path="res://scene/boss_map.gd" id="1_h8xiy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bbw3l7ns3qacb" path="res://asset/MountainsLayers/far-clouds.png" id="11_t1yjd"]
 [ext_resource type="Texture2D" uid="uid://nei8g3fblyr7" path="res://asset/MountainsLayers/near-clouds.png" id="12_gea1w"]
 [ext_resource type="Texture2D" uid="uid://cub65x0y0ym76" path="res://asset/MountainsLayers/mountains.png" id="13_e7flm"]
+[ext_resource type="AudioStream" uid="uid://b07km5uuypq3p" path="res://asset/Music/psychronic-bitstream-warrior-548271.mp3" id="14_igw05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0xie"]
 texture = ExtResource("1_e7v6y")
@@ -958,5 +959,28 @@ position = Vector2(5.722046e-06, 346)
 scale = Vector2(5, 5)
 texture = ExtResource("13_e7flm")
 
+[node name="PsychronicBitstreamWarrior548271" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(20, -39)
+stream = ExtResource("14_igw05")
+autoplay = true
+parameters/looping = true
+
+[node name="restart" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="restart"]
+offset_left = 1088.0
+offset_top = 620.0
+offset_right = 1149.0
+offset_bottom = 651.0
+text = "restart"
+
+[node name="Label" type="Label" parent="restart"]
+offset_left = 904.0
+offset_top = 621.0
+offset_right = 1086.0
+offset_bottom = 644.0
+text = "if you get stuck or smth"
+
 [connection signal="body_entered" from="key" to="." method="_on_key_body_entered"]
 [connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]
+[connection signal="pressed" from="restart/Button" to="." method="_on_button_pressed"]

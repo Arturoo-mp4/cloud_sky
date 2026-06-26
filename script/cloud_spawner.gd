@@ -7,11 +7,18 @@ var spawn_timer := 0.0
 var timer_jeda := 0.5
 var cloud_speed := 150.0
 
+
+
+
+@onready var angin_lvl_4: AudioStreamPlayer2D = $angin_lvl4
+
+
+
 var spawn_timer_giant := 0.0
-var jeda_giant := 1.0
+var jeda_giant := 3.0
 
 var spawn_timer_rapuh := 0.0
-var jeda_rapuh := 0.8
+var jeda_rapuh := 1.0
 
 const batas_kanan := 895
 const batas_kiri := -batas_kanan
@@ -76,14 +83,14 @@ func spawn_cloud_at(x: float, y: float):
 func _on_phase_changed(new_phase: int):
 	match  new_phase:
 		2:
-			cloud_speed = 150
-			timer_jeda = 0.4
+			cloud_speed = 130
+			timer_jeda = 0.8
 		3:
-			cloud_speed = 300
-			timer_jeda = 0.4
+			cloud_speed = 180
+			timer_jeda = 0.8
 		4:
-			cloud_speed = 400
-			timer_jeda = 0.5
+			cloud_speed = 250
+			timer_jeda = 0.8
 		5:
 			PhaseManager.is_game_aktif = false
 

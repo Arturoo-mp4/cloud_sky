@@ -55,3 +55,7 @@ func _on_key_body_entered(body: CharacterBody2D) -> void:
 func _on_portal_body_entered(body:CharacterBody2D) -> void:
 	if kunci:
 		get_tree().change_scene_to_file("res://scene/canvas_layer.tscn")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/boss_map.tscn")

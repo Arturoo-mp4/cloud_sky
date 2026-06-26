@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_play_pressed() -> void:
 	PhaseManager.sudah_level_5 = false
+	PhaseManager._kalah()
 	get_tree().change_scene_to_file("res://scene/main.tscn")
 
 

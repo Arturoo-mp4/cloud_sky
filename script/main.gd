@@ -1,8 +1,9 @@
 extends Node2D
 @onready var player: CharacterBody2D = $Player
-@onready var phase_label: Label = $CanvasLayer/PhaseLabel
+
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var defeat_screen: CanvasLayer = $Defeat_Screen
+@onready var phase_label: Label = $main_text/PhaseLabel
 
 @onready var portal: Node2D = $Portal
 

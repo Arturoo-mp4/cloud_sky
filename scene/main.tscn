@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt2spglh0k7fr"]
+[gd_scene load_steps=14 format=3 uid="uid://bt2spglh0k7fr"]
 
 [ext_resource type="Script" uid="uid://b6av7lilkvlmj" path="res://script/main.gd" id="1_brvut"]
 [ext_resource type="PackedScene" uid="uid://bjfs4tbhat7en" path="res://scene/player.tscn" id="1_itxqv"]
@@ -6,10 +6,13 @@
 [ext_resource type="Script" uid="uid://dqflwtythrrv8" path="res://script/cloud_spawner.gd" id="2_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://c830wqllqrqre" path="res://scene/defeat_screen.tscn" id="5_0ha60"]
 [ext_resource type="PackedScene" uid="uid://dt44so1ocduer" path="res://scene/giant_cloud.tscn" id="5_4j5ol"]
+[ext_resource type="Script" uid="uid://cwtwg4rvv4xa5" path="res://scene/main_text.gd" id="7_k65ib"]
 [ext_resource type="Script" uid="uid://bs13vjw4pygg2" path="res://script/wind_script.gd" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://bbhwgya4pngjv" path="res://scene/rapuh_cloud.tscn" id="8_of57s"]
 [ext_resource type="Texture2D" uid="uid://cv2j58otubmlp" path="res://asset/WhatsApp Image 2026-06-11 at 09.04.57.jpeg" id="9_b5f6u"]
+[ext_resource type="AudioStream" uid="uid://bor4orbnwjak2" path="res://asset/Music/prettyjohn1-chill-chill-music-505125.mp3" id="10_mswub"]
 [ext_resource type="PackedScene" uid="uid://bi54gtdg0gj1y" path="res://scene/portal.tscn" id="10_tqoya"]
+[ext_resource type="AudioStream" uid="uid://n6ms6fwpa7cu" path="res://asset/Music/dragon-studio-gust-of-wind-511325.mp3" id="12_wscrc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_brvut")
@@ -28,15 +31,30 @@ cloud_rapuh_scene = ExtResource("8_of57s")
 [node name="Cloud" parent="." instance=ExtResource("2_v0l8b")]
 position = Vector2(-1, -620)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="main_text" type="CanvasLayer" parent="."]
+script = ExtResource("7_k65ib")
 
-[node name="PhaseLabel" type="Label" parent="CanvasLayer"]
-offset_left = 316.0
-offset_top = 38.0
-offset_right = 663.0
-offset_bottom = 128.0
+[node name="PhaseLabel" type="Label" parent="main_text"]
+offset_left = 396.0
+offset_right = 743.0
+offset_bottom = 90.0
 theme_override_font_sizes/font_size = 65
 text = "kan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="main_text"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8834195, 1, 0.2784093, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.6421665, 1)
+theme_override_font_sizes/font_size = 32
+text = "Enjoy the game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -54,6 +72,24 @@ scale = Vector2(1.3, 1.3)
 script = ExtResource("7_p1hux")
 player = NodePath("../Player")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Wind"]
+
+[node name="Label" type="Label" parent="Wind/CanvasLayer"]
+offset_left = 327.0
+offset_top = 93.0
+offset_right = 809.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 32
+text = "the wind is coming!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Prettyjohn1ChillChillMusic505125" type="AudioStreamPlayer2D" parent="Wind/CanvasLayer"]
+position = Vector2(-6, -36)
+stream = ExtResource("10_mswub")
+autoplay = true
+parameters/looping = true
+
 [node name="Rapuh_cloud" parent="." instance=ExtResource("8_of57s")]
 position = Vector2(-1349, -899)
 
@@ -67,3 +103,7 @@ texture = ExtResource("9_b5f6u")
 [node name="Portal" parent="." instance=ExtResource("10_tqoya")]
 position = Vector2(161, -28)
 scale = Vector2(0.5, 0.5)
+
+[node name="angin_lvl4" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-504, -54)
+stream = ExtResource("12_wscrc")

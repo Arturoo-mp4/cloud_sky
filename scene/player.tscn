@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bjfs4tbhat7en"]
+[gd_scene load_steps=44 format=3 uid="uid://bjfs4tbhat7en"]
 
 [ext_resource type="Script" uid="uid://d06dcbujyvd13" path="res://script/player.gd" id="1_fvtld"]
 [ext_resource type="Texture2D" uid="uid://c6w167wvo8tnv" path="res://asset/Character/male_hero_template-idle.png" id="2_ct4mp"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b6xd4juapj0ee" path="res://asset/Character/male_hero_template-fall.png" id="3_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://bkq8nbfsdbkgi" path="res://asset/Character/male_hero_template-combo_1_end.png" id="3_hp4bs"]
 [ext_resource type="Texture2D" uid="uid://c3suboifn6dsi" path="res://asset/Character/male_hero_template-run.png" id="3_s4jxa"]
-[ext_resource type="AudioStream" uid="uid://dj3kubmn30gea" path="res://asset/daviddumaisaudio-sword-slash-and-swing-185432 (1).mp3" id="7_hp4bs"]
+[ext_resource type="AudioStream" uid="uid://dj3kubmn30gea" path="res://asset/Music/daviddumaisaudio-sword-slash-and-swing-185432 (1).mp3" id="7_hp4bs"]
+[ext_resource type="AudioStream" uid="uid://48u135ma4s1i" path="res://asset/Music/dragon-studio-hard-heavy-impact-515256.mp3" id="8_g2vtq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ie14"]
 atlas = ExtResource("2_oh5ij")
@@ -288,6 +289,10 @@ debug_color = Color(0.76879925, 0.4053595, 0.502312, 0.41960785)
 [node name="DaviddumaisaudioSwordSlashAndSwing185432(1)" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-7, 8)
 stream = ExtResource("7_hp4bs")
+
+[node name="DragonStudioHardHeavyImpact515256" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-8, 7)
+stream = ExtResource("8_g2vtq")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

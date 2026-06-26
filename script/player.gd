@@ -13,6 +13,12 @@ var sedang_didamage := false
 @onready var hitbox: Area2D = $hitbox
 @onready var progress_bar_player: ProgressBar = $"../CanvasLayer/ProgressBarPlayer"
 @onready var sword_slash: AudioStreamPlayer2D = $"DaviddumaisaudioSwordSlashAndSwing185432(1)"
+@onready var hard_heavy_impact: AudioStreamPlayer2D = $DragonStudioHardHeavyImpact515256
+
+
+
+
+
 
 @onready var camera_2d: Camera2D = $Camera2D
 
@@ -83,6 +89,7 @@ func _physics_process(delta: float) -> void:
 
 	
 func take_damage(amount: int):
+	hard_heavy_impact.play()
 	current_hp -= amount
 	progress_bar_player.value = current_hp
 	
