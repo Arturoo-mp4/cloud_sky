@@ -74,4 +74,12 @@ texture = ExtResource("2_cfsmh")
 position = Vector2(-271, 375)
 shape = SubResource("RectangleShape2D_d314w")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform"]
+position = Vector2(602, 662)
+shape = SubResource("RectangleShape2D_d314w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-1532, 659)
+shape = SubResource("RectangleShape2D_d314w")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

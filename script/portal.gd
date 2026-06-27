@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	print("Level 5!")
-	get_tree().change_scene_to_file("res://scene/boss_map.tscn")
+	Transition.ganti_scene("res://scene/boss_map.tscn", 1.5)

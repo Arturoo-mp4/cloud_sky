@@ -41,9 +41,10 @@ func _start_boss_transition() -> void:
 	portal.show()
 	
 	
-	#_camera_transition()
+	_camera_transition()
 
 func _camera_transition() -> void:
+	camera_2d.reparent($Player)
 	var tween = create_tween()
 	tween.tween_property(camera_2d, "zoom", Vector2(1.0, 1.0), 2)
 	tween.set_ease(Tween.EASE_OUT)

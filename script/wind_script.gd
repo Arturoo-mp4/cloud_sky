@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			label.visible = true
 			angin_lvl_4.play()
 			durasi_angin += delta
-			print("angin durasi: ", durasi_angin )
+			print("angin durasi: ", int(durasi_angin) )
 			player.angin  += 2 * arah_angin
 			if durasi_angin >= 2:
 				durasi_angin = 0 
