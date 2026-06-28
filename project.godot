@@ -20,6 +20,7 @@ config/icon="res://asset/icon.svg"
 PhaseManager="*res://script/PhaseManager.gd"
 boss_mati="*res://boss_mati.gd"
 Transition="*res://scene/transition.tscn"
+Gotdamaged="*res://scene/gotdamaged.tscn"
 
 [input]
 
@@ -38,3 +39,7 @@ attack={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(428, 13),"global_position":Vector2(437, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[rendering]
+
+viewport/hdr_2d=true

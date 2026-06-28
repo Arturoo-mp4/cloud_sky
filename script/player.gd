@@ -89,6 +89,7 @@ func _physics_process(delta: float) -> void:
 
 	
 func take_damage(amount: int):
+	Gotdamaged.ganti_scene(0.1)
 	hard_heavy_impact.play()
 	current_hp -= amount
 	progress_bar_player.value = current_hp

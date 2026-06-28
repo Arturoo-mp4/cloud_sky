@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gc_cloud_scene : PackedScene
 
 var shoot_timer := 0.0
+var jeda_shoot := 5.0
 
 var bos_tewas := false
 var max_hp := 100.0
@@ -106,7 +107,7 @@ func _physics_process(delta: float) -> void:
 		die()
 		
 	shoot_timer += delta
-	if shoot_timer >= 5:
+	if shoot_timer >= jeda_shoot:
 		shoot_player()
 		
 		
@@ -119,6 +120,7 @@ func masuk_fase2():
 	animasi.modulate = Color.from_hsv(0.0, 1.0, 0.7, 1.0)
 	rage = true
 	await animasi.animation_finished
+	jeda_shoot = 2.0
 	rage = false
 	
 	
