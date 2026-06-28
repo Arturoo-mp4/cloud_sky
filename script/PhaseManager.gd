@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not is_game_aktif:
 		return
-	time += 0.5
+	time += delta
 	
 	_update_phase()
 	

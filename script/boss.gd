@@ -14,7 +14,7 @@ var hp_sebelumnya := 100.0
 var timer_regen := 0.0
 var sedang_dihit := false
 var is_phase2 := false
-
+var rage := false
 
 #collision
 @onready var hit_box: Area2D = $Hit_Box
@@ -54,8 +54,17 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if bos_tewas:
 		return
+	if rage:
+		return
 	# Add the gravity.
-	
+	if is_phase2:
+		gc_shoot_timer += delta
+		if gc_shoot_timer >= 5:
+			var random_x = randf_range(-875, 950)
+			spawn_gc_cloud_at(random_x, -1000)
+		
+			
+			
 	if current_hp < hp_sebelumnya:
 		hp_sebelumnya = current_hp
 		timer_regen = 0
@@ -104,12 +113,13 @@ func _physics_process(delta: float) -> void:
 	if not is_phase2 and current_hp <= max_hp * 0.5:
 		masuk_fase2()
 		
-	if is_phase2:
-		gc_shoot_timer += delta
-		if gc_shoot_timer >= 5:
-			var random_x = randf_range(-875, 950)
-			spawn_gc_cloud_at(random_x, -1000)
+	
 func masuk_fase2():
+	animasi.play("rage")
+	animasi.modulate = Color.from_hsv(0.0, 1.0, 0.7, 1.0)
+	rage = true
+	await animasi.animation_finished
+	rage = false
 	
 	
 	is_phase2 = true
@@ -130,7 +140,9 @@ func _on_area_2d_body_entered(body:CharacterBody2D):
 		player_masuk =true
 	
 func animasi_jalan():
-
+	if rage:
+		return
+	
 	if jarak >= 120.0:
 		
 		animasi.play("walk'")
@@ -209,7 +221,10 @@ func die():
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.name == "hurtboxplayer":
-		area.get_parent().take_damage(5)
+		var random = randf_range(3,8)
+		if is_phase2:
+			random = randf_range(8,14)
+		area.get_parent().take_damage(random)
 
 
 

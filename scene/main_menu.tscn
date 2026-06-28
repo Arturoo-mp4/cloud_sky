@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhscww6uvbllo"]
+
+[ext_resource type="Script" uid="uid://bf8rch666f75c" path="res://script/main_menu.gd" id="1_3er1b"]
+
+[node name="Main_menu" type="CanvasLayer"]
+script = ExtResource("1_3er1b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1274052, 0.22049975, 0.33526343, 1)
+
+[node name="PLay" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -34.0
+offset_right = 120.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.26814532, 0.7097987, 0.75469434, 1)
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 67.0
+offset_right = 121.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.26814532, 0.7097987, 0.75469434, 1)
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 100.0
+offset_right = 138.0
+offset_bottom = 183.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Cloud Sky"
+
+[connection signal="pressed" from="PLay" to="." method="_on_p_lay_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
