@@ -21,9 +21,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	print("halo")
 	if fase_sekarang != 4:
 		return
 	else:
+		
 		if not angin_aktif:
 			label.visible = false
 			timer_angin += delta
@@ -36,6 +39,7 @@ func _process(delta: float) -> void:
 				player.angin = 0.0
 				
 		if angin_aktif:
+			
 			label.visible = true
 			angin_lvl_4.play()
 			durasi_angin += delta

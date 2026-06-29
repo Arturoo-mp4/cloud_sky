@@ -293,6 +293,7 @@ stream = ExtResource("7_hp4bs")
 [node name="DragonStudioHardHeavyImpact515256" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-8, 7)
 stream = ExtResource("8_g2vtq")
+volume_db = -19.184
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -94,6 +94,7 @@ vertical_alignment = 1
 [node name="Prettyjohn1ChillChillMusic505125" type="AudioStreamPlayer2D" parent="Wind/CanvasLayer"]
 position = Vector2(-6, -36)
 stream = ExtResource("10_mswub")
+volume_db = -9.772
 autoplay = true
 parameters/looping = true
 

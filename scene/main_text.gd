@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if PhaseManager.new_phase >= 2:
-		label.text = "CLoud now can move horizontaly!"
+		label.text = "Cloud now can move horizontaly!"
 	if PhaseManager.new_phase >= 3:
 		label.text = "Be carefull with the Giant CLoud!"
 	if PhaseManager.new_phase >= 4:

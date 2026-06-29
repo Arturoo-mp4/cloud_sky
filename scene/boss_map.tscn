@@ -988,6 +988,7 @@ texture = ExtResource("13_e7flm")
 [node name="PsychronicBitstreamWarrior548271" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(20, -39)
 stream = ExtResource("14_igw05")
+volume_db = -9.16
 autoplay = true
 parameters/looping = true
 
@@ -998,6 +999,7 @@ offset_left = 1088.0
 offset_top = 620.0
 offset_right = 1149.0
 offset_bottom = 651.0
+focus_mode = 0
 text = "restart"
 
 [node name="Label" type="Label" parent="restart"]

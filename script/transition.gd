@@ -26,3 +26,4 @@ func ganti_scene(path: String, durasi_hold: float = 1.0) -> void:
 	await tween_out.finished
 
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+#

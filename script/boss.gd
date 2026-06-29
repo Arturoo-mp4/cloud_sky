@@ -35,7 +35,7 @@ var sedang_attack := false
 
 
 
-var direction := 0.0
+@export var direction := 0.0
 var jarak := 0.0
 var SPEED = 400.0
 const JUMP_VELOCITY = -400.0
@@ -166,7 +166,6 @@ func animasi_jalan():
 			
 			
 	else:
-		
 		attack()
 		
 

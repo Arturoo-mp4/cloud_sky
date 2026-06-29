@@ -7,6 +7,8 @@ extends Node2D
 var player_tewas := false
 var kunci := false
 
+@onready var boss: CharacterBody2D = $boss
+
 @onready var collision_portal: CollisionShape2D = $portal/CollisionShape2D
 @onready var collision_key: CollisionShape2D = $key/CollisionShape2D
 
@@ -59,4 +61,9 @@ func _on_portal_body_entered(body:CharacterBody2D) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/boss_map.tscn")
+	
+	print("jahd")
+	if boss.direction > 0:
+		boss.position.x -= 500
+	else:
+		boss.position.x += 500

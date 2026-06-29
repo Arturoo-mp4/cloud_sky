@@ -4,11 +4,12 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	layer = 99
+	hide()
 
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func ganti_scene(durasi_hold: float = 1.0) -> void:
+	show()
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
 
 	
@@ -24,5 +25,6 @@ func ganti_scene(durasi_hold: float = 1.0) -> void:
 	var tween_out = create_tween()
 	tween_out.tween_property(color_rect, "color:a", 0.0, 0.05)
 	await tween_out.finished
+	hide()
 
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
