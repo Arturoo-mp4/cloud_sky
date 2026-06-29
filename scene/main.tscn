@@ -58,6 +58,13 @@ text = "Enjoy the game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="main_text"]
+offset_left = 984.0
+offset_top = 13.0
+offset_right = 1131.0
+offset_bottom = 36.0
+text = "Press \"P\" for pause"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(12, -13)
 zoom = Vector2(0.6, 0.6)

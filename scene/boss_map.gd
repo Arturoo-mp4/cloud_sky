@@ -14,6 +14,7 @@ var kunci := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	key.monitoring = false
 	portal.monitoring = false
 	PhaseManager.sudah_level_5 = true
